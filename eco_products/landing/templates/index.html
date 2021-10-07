@@ -1,0 +1,167 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'landing/css/index.css' %}">
+</head>
+<body>
+    <div class="header">
+        <div class="header_content">
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/5613/5613052.png" alt="" width="90px"; height="90px";>
+            </div>
+            <div class="header_menu">
+                <div class="header_button">
+                    <a href="#content_1">Главная</a>
+                </div>
+                <div class="header_button">
+                    <a href="#categories">Товары</a>
+                </div>
+                <div class="header_button">
+                    <a href="#products">Наша продукция</a>
+                </div>
+                <div class="header_button">
+                    <a href="#footer">Как нас найти</a>
+                </div>
+                <div class="basket">
+                    <img src="https://cdn.icon-icons.com/icons2/816/PNG/512/basket_icon-icons.com_66289.png" alt="" height="40px"; width="40px">
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="content_1" id="content_1">
+            <div class="wrapper">
+                <div class="content_1_title">
+                    КОСТРОМСКИЕ ЭКО-</br>ПРОДУКТЫ
+                </div>
+                <div class="slider_container">
+                    <div class="slider_track">
+                        <div class="slider_item">
+                            <img src="https://images3.alphacoders.com/190/thumb-1920-190787.jpg" alt="">
+                        </div>
+                        <div class="slider_item">
+                            <img src="https://img1.akspic.ru/originals/4/8/8/6/46884-peyzash-preriya-urozhaj-senokosnoye_ugodye-ravnina-1920x1080.jpg" alt="">
+                        </div>
+                        <div class="slider_item">
+                            <img src="https://img3.akspic.ru/originals/3/1/7/6/46713-yachmen-rozh-ferma-nebo-selskij_rajon-1920x1080.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="categories" id="categories">
+            <div class="category_menu">
+                <div class="category_button">
+                    <a href="#" class="drop_button">Категория 1</a>
+                    <div class="drop_menu">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+                <div class="category_button">
+                    <a href="#" class="drop_button">Категория 2</a>
+                    <div class="drop_menu">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+                <div class="category_button">Категория 3</div>
+                <div class="category_button">Категория 4</div>
+            </div>
+        </div> -->
+        <div class="food_container_1">
+            <div class="food_photo_1">
+
+            </div>
+            <div class=food_wrapper_1>
+                <div class="food_title_1">
+                    Это загаловок тип
+                </div>
+                <div class="food_text_1">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus obcaecati, blanditiis consectetur dolorum optio iusto sit odit recusandae eligendi saepe cupiditate cumque id molestias veniam repudiandae provident unde eum voluptates!
+                </div>
+            </div>
+        </div>
+        <div class="food_container_2">
+            <div class="food_wrapper_2">
+                <div class="food_title_2">
+                    Это загаловок тип
+                </div>
+                <div class="food_text_2">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore rem in explicabo libero culpa quia optio modi repellat delectus nobis earum architecto veritatis, ab, unde minima iure? Consectetur, dolorum dignissimos!
+                </div>
+            </div>
+            <div class="food_photo_2">
+
+            </div>
+        </div>
+
+        <div class="products" id="products">
+            <div class="title">Еда тип</div>
+            <div class="product_menu">
+                <div class="product">
+                    <div class="product_photo">
+                        <img src="https://www.gastronom.ru/binfiles/images/20190828/b3fdbe5b.jpg" alt="">
+                    </div>
+                    <div class="product_info">
+                        <div class="product_title">Мед: 1000р</div>
+                        <div class="buy_button"><div>Курить</div></div>
+                    </div>
+                </div>
+                <div class="product"></div>
+                <div class="product"></div>
+                <div class="product"></div>
+            </div>
+        </div>
+        
+        <div class="reviews" id="reviews">
+            <div class="title">Отзывы тип:</div>
+            <div class="review_menu">
+                <div class="review">
+                    <div class="nickname">Leha</div>
+                    <div class="text_review">Ебаный рот, этого казино.Ебаный рот, этого казино.Ебаный рот, этого казино.Ебаный рот, этого казино.</div>
+                    <div class="date_review">05.06.977</div>
+                </div>
+                <div class="review">
+                    <div class="nickname">Leha</div>
+                    <div class="text_review">Ебаный рот, этого казино.Ебаный рот, этого казино.Ебаный рот, этого казино.Ебаный рот, этого казино.</div>
+                    <div class="date_review">05.06.977</div>
+                </div>
+                <div class="review">
+                    <div class="nickname">Leha</div>
+                    <div class="text_review">Ебаный рот, этого казино.Ебаный рот, этого казино.Ебаный рот, этого казино.Ебаный рот, этого казино.</div>
+                    <div class="date_review">05.06.977</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer" id="footer">
+        <div class="footer_content">
+            <div class="footer_logo">
+                OOO Григоревская туса
+            </div>
+            <div class="footer_menu">
+                <div class="footer_button">
+                    <img src="https://free-png.ru/wp-content/uploads/2020/04/VK_Monochrome_Logo_t.png" alt="">
+                </div>
+                <div class="footer_button">
+                    <img src="https://c0.klipartz.com/pngpicture/11/681/gratis-png-logotipo-de-instagram-baba-ghanoush-falafel-tabbouleh-party-y-batalla-huevo-ensalada-logo-de-instagram-blanco.png" alt="">
+                </div>
+                <div class="footer_button"></div>
+                <div class="footer_button"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'landing/js/index.js'%}"></script>
+
+</body>
+</html>
