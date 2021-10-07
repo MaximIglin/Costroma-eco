@@ -54,10 +54,26 @@ WSGI_APPLICATION = 'eco_products.wsgi.application'
 
 
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'django_db',
+
+        'USER': 'admin',
+
+        'PASSWORD': 'some_password_1',
+
+        'HOST': '188.166.146.37',
+
+        'PORT': '5432',
+        'TEST': {
+            'NAME': 'test_db',
+        },
+
     }
+
 }
 
 
