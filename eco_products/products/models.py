@@ -16,27 +16,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name    
 
-class SubCategory(models.Model):
-    """Данная модель описывает подкатегории товаров"""
-    category = models.ForeignKey(Category, verbose_name="Категория", on_delete=models.CASCADE, null=True, blank=True)
-    name = models.CharField("Подкатегория", max_length=30)
-    slug = models.SlugField("слаг")
-    image = models.URLField("Изображение", null=True, blank = True)
-
-    class Meta:
-        verbose_name = "Подкатегории"
-        db_table = "subcategory"
-        ordering = ['name']
-
-    def __str__(self):
-        return self.name 
-
-
 class Product(models.Model):
     """Данная модель описывает инстансы продуктов"""
     name = models.CharField("Наименование", max_length=150)
     category = models.ForeignKey(Category, verbose_name="Категория", on_delete=models.CASCADE)
-    subcategory = models.ForeignKey(SubCategory, verbose_name="Подкатегория",on_delete=models.CASCADE)
     description = models.TextField("Описание продукта")
     qty = models.PositiveIntegerField(verbose_name="Количество", default=0)
     mass = models.DecimalField(max_digits=10,  decimal_places=2, verbose_name="Масса", null=True, blank=True, validators=[MinValueValidator(0)])
