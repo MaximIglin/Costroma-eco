@@ -22,7 +22,8 @@ class Category(models.Model):
             temporary_image.write(urllib.request.urlopen(self.image_url).read())
             temporary_image.flush()
             self.image.save(f"{self.slug}.png", File(temporary_image))
-        self.image.name = f"{self.slug}.png"    
+        if self.image:    
+            self.image.name = f"{self.slug}.png"    
         super(Category, self).save(*args, *kwargs)        
 
 

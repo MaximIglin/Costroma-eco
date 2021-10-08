@@ -5,7 +5,7 @@ from rest_framework import status
 from .serializers import CategorySerializer, ProductSerializer
 from .services import (add_new_product, get_all_categories, get_all_products,
                        get_category_by_slug, get_product_by_slug,
-                       does_not_exist_decorator, add_new_category
+                       does_not_exist_decorator, add_new_category, get_products_by_category
 )
 
 
@@ -53,4 +53,12 @@ class ProductDetailApi(APIView):
     def get(self, request, slug):
         product = get_product_by_slug(slug)
         serializer = ProductSerializer(product)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class ProductsByCategoryApi(APIView):
+
+    def get(self, request, slug):
+        products = get_products_by_category(slug)
+        serializer = ProductSerializer(products, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
