@@ -4,8 +4,8 @@ const header = document.querySelector('.header')
 const categories = document.querySelector('.categories')
 
 let activeSlideIndex = 0;
-let positionHeader = header.getBoundingClientRect().top;
-let positionCategories = categories.getBoundingClientRect().top;
+// let positionHeader = header.getBoundingClientRect().top;
+// let positionCategories = categories.getBoundingClientRect().top;
 
 
 function changeSlide() {

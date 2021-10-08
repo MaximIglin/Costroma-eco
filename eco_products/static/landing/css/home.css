@@ -1,0 +1,337 @@
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content_1{
+    width: 100%;
+    background-position: 0 0;
+    background-attachment: fixed;
+}
+
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider_container{
+    background-color: pink;
+}
+
+.slider_track{
+    display: flex;
+    transition: 1.3s;
+}
+
+.slider_item{
+    height: 100vh;
+    width: 100vw;
+}
+
+.content_1_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.45);     
+    font-size: 100px;
+    font-weight: 500;
+    z-index: 1;
+    Color: white;
+    position: absolute;
+}
+
+.categories{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background-color: #000;
+}
+
+.category_menu{
+    font-weight: 300;
+    font-size: 24px;
+    color: #fff;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.category_button{
+    /* background-color: #14b199; */
+    position: relative;
+    display: inline-block;
+    font-size: 35px;
+    /* padding: 10px; */
+}
+
+.drop_button{
+    color: white;
+    border: none;
+    height: 100%;
+    width: 25%;
+}
+
+.drop_button a{
+    color: black;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0);
+}
+
+.drop_menu{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    /* padding-top: 10px; */
+}
+
+.drop_menu a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.drop_menu a:hover {background-color: #ddd;}
+
+.category_button:hover .drop_menu {display: block;}
+
+.drop_button:hover{
+    background-color: #14b199;
+    transition-duration: 400ms;
+}
+
+.food_container_1{
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    margin: 80px 0 80px 0;
+    background-color: rgb(240, 241, 243, 0.8);
+}
+
+.food_photo_1{
+    width: 40%;
+    height: 100%;
+    background-color: #fff;
+    background-image: url(https://ic.pics.livejournal.com/vilka_logka/50543949/268522/268522_original.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.food_wrapper_1{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.food_title_1{
+    color: #000;
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.food_text_1{
+    width: 50%;
+    font-size: 35px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.food_container_2{
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    margin: 80px 0 80px 0;
+    background-color: rgb(240, 241, 243, 0.8);
+}
+
+.food_wrapper_2{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.food_title_2{
+    color: #fff;
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.food_text_2{
+    color: #fff;
+    width: 75%;
+    font-size: 35px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.food_photo_2{
+    width: 60%;
+    height: 100%;
+    background-image: url(https://smak.ua/i/63/90/8/63908/gallery/dc3f6bbc82e08e4c4a4059c3b12301e0-resize_crop_1Xquality_100Xallow_enlarge_0Xw_680Xh_510.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.products{
+    height: 80vh;
+    width: 100%;
+    background-position: 0 0;
+    background-attachment: fixed;
+    background-image: url(https://img1.akspic.ru/originals/3/6/9/6/46963-urozhaj-zerno-pshenica-kompania-nebo-1920x1080.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.product_wrapper{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.product_menu{
+    width: 95%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title{
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.product{
+    height: 90%;
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.product_photo{
+    height: 70%;
+    width: 100%;
+}
+.product_photo img{
+    width: 100%;
+    height: 100%;
+}
+
+.product_info{
+    font-size: 24px;
+    font-weight: 500;
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+}
+
+.buy_button{
+    width: 60%;
+    height: 40px;
+    border-radius: 12px;
+    background-color: #14b199;
+    color: #fff;
+}
+
+.buy_button div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+.buy_button div:hover{
+    background-color: rgba(0, 0, 0, 0.4);
+    transition-duration: 400ms;
+}
+
+.reviews{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.review_menu{
+    width: 90%;
+    height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.review{
+    height: 90%;
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 4px 4px 9px rgba(198,198,198,0.4);
+    /* border: 3px solid #000; */
+    border-radius: 12px;
+}
+
+.nickname{
+    font-weight: 500;
+    font-size: 24px;
+    width: 80%;
+}
+
+.text_review{
+    font-size: 20px;
+    width: 80%;
+    max-height: 80%;
+}

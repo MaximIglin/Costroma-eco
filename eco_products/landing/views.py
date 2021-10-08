@@ -4,4 +4,4 @@ from products.models import Category
 
 def render_landing_page(request):
     categories = Category.objects.all()
-    return render(request, 'index.html', {'categories':categories})
+    return render(request, 'home.html', {'categories':categories})
