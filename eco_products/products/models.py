@@ -1,5 +1,6 @@
 import urllib
 from tempfile import NamedTemporaryFile
+import os
 
 from django.db import models
 from django.core.validators import MinValueValidator
@@ -20,8 +21,9 @@ class Category(models.Model):
             temporary_image = NamedTemporaryFile(delete=True)
             temporary_image.write(urllib.request.urlopen(self.image_url).read())
             temporary_image.flush()
-            self.image.save(f"{self.name}.png", File(temporary_image))
-        super(Category, self).save(*args, *kwargs) 
+            self.image.save(f"{self.slug}.png", File(temporary_image))
+        self.image.name = f"{self.slug}.png"    
+        super(Category, self).save(*args, *kwargs)        
 
 
 
@@ -36,7 +38,8 @@ class Category(models.Model):
 class Product(models.Model):
     """Данная модель описывает инстансы продуктов"""
     name = models.CharField("Наименование", max_length=150)
-    category = models.ForeignKey(Category, verbose_name="Категория", on_delete=models.CASCADE)
+    slug = models.SlugField("слаг", blank=True, null=True)
+    category = models.ForeignKey(Category, verbose_name="Категория", on_delete=models.CASCADE, related_name="products")
     description = models.TextField("Описание продукта")
     qty = models.PositiveIntegerField(verbose_name="Количество", default=0)
     mass = models.DecimalField(max_digits=10,  decimal_places=2, verbose_name="Масса", null=True, blank=True, validators=[MinValueValidator(0)])
@@ -46,6 +49,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to="products", verbose_name="Изображение", blank=True, null=True)
 
     def save(self, *args, **kwargs):
+        self.image.name = f"{self.slug}.jpeg"
         if self.sale > 0:
             self.price = self.price - self.price * (self.sale / 100)
         self.price = self.price    
