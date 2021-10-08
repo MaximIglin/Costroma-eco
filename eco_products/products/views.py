@@ -1,5 +1,18 @@
 from django.shortcuts import render
+from .services import get_all_categories, get_all_products, get_products_by_category
 
 
 def get_shop_page(request):
-    return render(request, "shop.html", {})
+    context =  {
+        "categories": get_all_categories(),
+        "products": get_all_products()
+    }
+    return render(request, "shop.html", context)
+
+
+def category_detail_page(request, slug):
+    context = {
+        "categories": get_all_categories(),
+        "category_products":get_products_by_category(slug)
+    }
+    return render(request, "shop.html", context)

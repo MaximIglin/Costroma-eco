@@ -44,7 +44,6 @@ def add_new_category(data: dict):
     category.slug = data['slug']
     category.image = data['image']
     category.save()
-
     return category
 
 def add_new_product(data: dict):
@@ -64,5 +63,11 @@ def add_new_product(data: dict):
     product.sale = data['sale']
     product.image = data['image']
     product.save()
+    return product  
 
-    return product       
+
+def get_products_by_category(category_slug: str):
+    """This function is return all products by category"""
+    products = Product.objects.filter(category__slug=category_slug)
+    print(products)
+    return products
