@@ -1,12 +1,13 @@
 from django.db import models
 from django.core.validators import MinValueValidator
+from django.db.models.base import ModelState
 
 
 class Category(models.Model):
     """Данная модель описывает категории товаров"""
     name = models.CharField("Категория", max_length=300)
     slug = models.SlugField("слаг")
-    image = models.CharField("Изображение", max_length=500)
+    image_url = models.URLField("Изображение", max_length=500, blank=True, null=True)
 
     class Meta:
         verbose_name = "Категории"
@@ -26,7 +27,8 @@ class Product(models.Model):
     volume = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Объём", null=True, blank=True, validators=[MinValueValidator(0)])
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена", validators=[MinValueValidator(0)])
     sale = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name="Скидка", validators=[MinValueValidator(0)])
-    images = models.JSONField(verbose_name="Изображения")
+    image_url = models.URLField(verbose_name="Ссылка на изображение", blank=True, null=True)
+    image = models.ImageField(upload_to="products", verbose_name="Изображение", blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if self.sale > 0:
