@@ -151,10 +151,11 @@ html{
 }
 
 .footer_button:hover{
+    border: 1px solid #000;
     box-shadow: 4px 4px 9px rgba(198,198,198,0.36);
     border-radius: 13px;
     /* background-color: rgb(255, 255, 255, 0.2); */
-    transition-duration: 400ms;
+    transition-duration: 80ms;
 }
 
 .footer_button img{
