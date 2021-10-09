@@ -82,7 +82,7 @@ DATABASE_VARIANTS = {
 }
 
 DATABASES = {
-    'default': DATABASE_VARIANTS['local_testing_db']
+    'default': DATABASE_VARIANTS['main']
 }
 
 
