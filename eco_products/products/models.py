@@ -24,8 +24,7 @@ class Category(models.Model):
             self.image.save(f"{self.slug}.png", File(temporary_image))
         if self.image:    
             self.image.name = f"{self.slug}.png"    
-        super(Category, self).save(*args, *kwargs)        
-
+        super(Category, self).save(*args, *kwargs)   
 
 
     class Meta:

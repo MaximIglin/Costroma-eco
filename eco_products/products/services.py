@@ -42,7 +42,8 @@ def add_new_category(data: dict):
     category = Category()
     category.name = data['name']
     category.slug = data['slug']
-    category.image = data['image']
+    if 'image' in data.keys():
+        category.image = data['image']
     category.save()
     return category
 
@@ -53,15 +54,17 @@ def add_new_product(data: dict):
     category = Category.objects.get(name=data['category'])
     product.category = category
     product.slug = data['slug']
-    product.description = data['descriprion']
+    product.description = data['description']
     product.qty = data['qty']
-    if 'mass' in data.keys():
-        product.mass = data['mass']
-    elif 'volume' in data.keys():
-        product.volume = data['volume']
     product.price = data['price']
-    product.sale = data['sale']
-    product.image = data['image']
+    try:
+        product.mass = data['mass']
+        product.volume = data['volume']
+        product.sale = data['sale']
+        product.image = data['image']
+        product.save()
+    except KeyError:
+        product.save()    
     product.save()
     return product  
 

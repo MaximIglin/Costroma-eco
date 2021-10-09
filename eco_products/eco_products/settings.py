@@ -54,11 +54,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'eco_products.wsgi.application'
 
-
-DATABASES = {
-
-    'default': {
-
+DATABASE_VARIANTS = {
+    'main': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
         'NAME': 'django_db',
@@ -72,10 +69,20 @@ DATABASES = {
         'PORT': '5432',
         'TEST': {
             'NAME': 'test_db',
-        },
+        }
+    },
 
+    'local_testing_db':{
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'TEST': {
+            'NAME': 'test_db',
+        }
     }
+}
 
+DATABASES = {
+    'default': DATABASE_VARIANTS['local_testing_db']
 }
 
 
