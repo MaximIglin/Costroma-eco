@@ -31,17 +31,17 @@ ___
 - Добавить категорию (**POST (form-data or JSON)**):
     - ``` **domain.ru/api/category```
         > {
-            **"name"**: "Масло",
-            **"slug"**: "butter"
+            **"name"**: "Масло",</br>
+            **"slug"**: "butter"</br>
             }
 - Добавить продукт (**POST (form-data or JSON)**):
     - ``domain.ru/api/products``
         > {
-            **"name"**: "Мёд",
-            **"category"**: "honey",
-            **"slug"**: "honey3",
-            **"description"**: "some_text_here",
-            **"qty"**: 500,
-            **"price"**: 5000,
+            **"name"**: "Мёд",</br>
+            **"category"**: "honey",</br>
+            **"slug"**: "honey3",</br>
+            **"description"**: "some_text_here",</br>
+            **"qty"**: 500,</br>
+            **"price"**: 5000,</br>
             }           
 
