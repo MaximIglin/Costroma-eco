@@ -17,7 +17,7 @@
    python3.9 manage.py runserver
 ___
 
-####Api-endpoints для работы с БД
+#### Api-endpoints для работы с БД
 - Получить все категории товаров и массив ассоциативных с ними товаров (**GET**):
     - > **domain.ru/api/category**
 - Получить массив всех товаров (**GET**):
