@@ -30,13 +30,13 @@ ___
     - > ``domain.ru/api/category-product/[category_slug]``  
 - Добавить категорию (**POST (form-data or JSON)**):
     - ``` **domain.ru/api/category```
-        > {
+        > {</br>
             **"name"**: "Масло",</br>
             **"slug"**: "butter"</br>
             }
 - Добавить продукт (**POST (form-data or JSON)**):
     - ``domain.ru/api/products``
-        > {
+        > {</br>
             **"name"**: "Мёд",</br>
             **"category"**: "honey",</br>
             **"slug"**: "honey3",</br>
