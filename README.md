@@ -19,23 +19,23 @@ ___
 
 #### Api-endpoints для работы с БД
 - Получить все категории товаров и массив ассоциативных с ними товаров (**GET**):
-    - > **domain.ru/api/category**
+    -  ``domain.ru/api/category``
 - Получить массив всех товаров (**GET**):
-    - > **domain.ru/api/products**
+    - ``domain.ru/api/products``
 - Получить категорию по слагу и массив ассоциативных с ней товаров (**GET**):
-    - > **domain.ru/api/category/[slug]**
+    - ``domain.ru/api/category/[slug]``
 - Получить продукт по слагу (**GET**):
-    - > **domain.ru/api/product/[slug]**
+    - ``domain.ru/api/product/[slug]``
 - Получить массив продуктов по слагу категории (**GET**):
-    - > **domain.ru/api/category-product/[category_slug]**  
+    - > ``domain.ru/api/category-product/[category_slug]``  
 - Добавить категорию (**POST (form-data or JSON)**):
-    - > **domain.ru/api/category**
+    - ``` **domain.ru/api/category```
         > {
             **"name"**: "Масло",
             **"slug"**: "butter"
             }
 - Добавить продукт (**POST (form-data or JSON)**):
-    - > **domain.ru/api/products**
+    - ``domain.ru/api/products``
         > {
             **"name"**: "Мёд",
             **"category"**: "honey",
