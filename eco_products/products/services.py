@@ -72,5 +72,4 @@ def add_new_product(data: dict):
 def get_products_by_category(category_slug: str):
     """This function is return all products by category"""
     products = Product.objects.filter(category__slug=category_slug)
-    print(products)
     return products

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+
 from .services import get_all_categories, get_all_products, get_products_by_category
 
 

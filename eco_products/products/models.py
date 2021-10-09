@@ -30,7 +30,7 @@ class Category(models.Model):
     class Meta:
         verbose_name = "Категории"
         db_table = "category"
-        ordering = ['name']
+        ordering = ['id']
 
     def __str__(self):
         return self.name    
