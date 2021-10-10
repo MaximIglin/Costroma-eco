@@ -1,4 +1,5 @@
 {% extends "index.html" %}
+{%load static%}
 
 {% block "container"%}
 <div class="main_shop">
@@ -15,12 +16,12 @@
     <div class="content">
         {%if products%}
             {%for product in products%}
-            <div class="product_shop">
+            <div class="product_shop hide">
                 <div class="product_photo">
                     <img src="{{product.image.url}}" alt="">
                 </div>
                 <div class="product_info">
-                    <div class="product_title">{{product.name}}: {{product.price}}</div>
+                    <div class="product_title">{{product.name}}: {{product.price}} ₽</div>
                     <div class="buy_button"><div>Купить</div></div>
                 </div>
             </div>
@@ -41,4 +42,6 @@
         {% endif %}
     </div>
 </div>
+<script src="{% static 'products/js/shop.js'%}"></script>
 {% endblock %}
+
