@@ -7,9 +7,7 @@
     <div class="categories" id="categories">
         <div class="category_menu">
             {% for category in categories%}
-            <div class="category_button">
-                <a href="{% url 'category' category.slug%}" class="drop_button">{{category.name}}</a>
-            </div>
+                <a href="{% url 'category' category.slug%}" class="category_button">{{category.name}}</a>
             {% endfor %}
         </div>
     </div>
