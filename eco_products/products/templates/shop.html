@@ -14,32 +14,31 @@
     <div class="content">
         {%if products%}
             {%for product in products%}
-            <div class="product_shop hide">
-                <div class="product_photo">
-                    <img src="{{product.image.url}}" alt="">
-                </div>
-                <div class="product_info">
-                    <div class="product_title">{{product.name}}: </div>
-                    <div class="buy_button"><div>{{product.price}} ₽</div></div>
-                </div>
-            </div>
+            <a href="{% url 'product_detail' product.slug %}" class="product_shop" style="color: black;">
+                    <div class="product_photo">
+                        <img src="{{product.image.url}}" alt="">
+                    </div>
+                    <div class="product_info">
+                        <div class="product_title">{{product.name}}: {{product.price}} ₽</div>
+                        <div class="buy_button"><div>Купить</div></div>
+                    </div>
+            </a>
             {%endfor%}
         {%endif%}
         {% if category_products %}
             {%for product in category_products%}
-            <div class="product_shop">
+            <a href="{% url 'product_detail' product.slug %}" class="product_shop" style="color: black;">
                 <div class="product_photo">
                     <img src="{{product.image.url}}" alt="">
                 </div>
                 <div class="product_info">
-                    <div class="product_title">{{product.name}}: </div>
-                    <div class="buy_button"><div>{{product.price}} ₽</div></div>
+                    <div class="product_title">{{product.name}}: {{product.price}}</div>
+                    <div class="buy_button"><div>Купить</div></div>
                 </div>
-            </div>
+            </a>
             {%endfor%}
         {% endif %}
     </div>
 </div>
 <script src="{% static 'products/js/shop.js'%}"></script>
 {% endblock %}
-
