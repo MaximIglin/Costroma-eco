@@ -9,13 +9,15 @@
     <title>Костромские Эко-продукты</title>
     <link rel="stylesheet" href="{% static 'landing/css/index.css' %}">
     <link rel="stylesheet" href="{% static 'landing/css/home.css' %}"> 
-    <link rel="stylesheet" href="{% static 'landing/css/shop.css' %}">  
+    <link rel="stylesheet" href="{% static 'landing/css/shop.css' %}"> 
+    <link rel="stylesheet" href="{% static 'clients_system/css/cart.css' %}">   
 </head>
 <body>
     <div class="header">
         <div class="header_content">
             <div class="logo">
-                <img src="https://cdn-icons-png.flaticon.com/512/5613/5613052.png" alt="" width="90px"; height="90px";>
+                <img src="https://cdn-icons-png.flaticon.com/512/5613/5613052.png" alt="" width="60px"; height="60px";>
+                Эко-ферма
             </div>
             <div class="header_menu">
                 <div class="header_button">
@@ -30,7 +32,7 @@
                 <div class="header_button">
                     <a href="#footer">Как нас найти</a>
                 </div>
-                <div class="basket">
+                <div class="cart">
                     <a href="{%url 'cart'%}"><img src="https://cdn.icon-icons.com/icons2/816/PNG/512/basket_icon-icons.com_66289.png" alt="" height="40px"; width="40px"></a>
             </div>
             </div>

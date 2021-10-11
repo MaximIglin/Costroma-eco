@@ -77,8 +77,13 @@ html{
     width: 20%;
     margin-left: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    border:2px solid #000;
+    border-radius: 100px/50px;
+    font-size: 24px;
+    font-weight: 400;
 }
 
 .header_menu{
@@ -106,8 +111,15 @@ html{
     transition-duration: 400ms;
 }
 
-.basket{
-    width: 10%;
+.cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.cart:active{
+    border-top: 1px solid rgba(0, 0, 0, 0);
 }
 
 .footer{
@@ -151,12 +163,8 @@ html{
     border-radius: 12px;
 }
 
-.footer_button:hover{
-    border: 1px solid #000;
-    box-shadow: 4px 4px 9px rgba(198,198,198,0.36);
-    border-radius: 13px;
-    /* background-color: rgb(255, 255, 255, 0.2); */
-    transition-duration: 80ms;
+.footer_button:active{
+    border-top: 1px solid #000;
 }
 
 .footer_button img{
