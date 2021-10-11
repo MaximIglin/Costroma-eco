@@ -21,6 +21,7 @@ INSTALLED_APPS = [
 
     'landing',
     'products',
+    'clients_system',
     'rest_framework',
 ]
 
