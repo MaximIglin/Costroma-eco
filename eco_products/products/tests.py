@@ -1,6 +1,8 @@
 from django.test import TestCase
 from .models import Category, Product
 from .services import *
+
+
 class TestServises(TestCase):
 
     def setUp(self) -> None:
@@ -52,10 +54,10 @@ class TestServises(TestCase):
         self.assertEqual(correct_product, product_from_function)
 
     def test_add_new_category(self):
-        data = {'name':'Масло', 'slug':'butter'}
+        data = {'name': 'Масло', 'slug': 'butter'}
         added_category = add_new_category(data)
         for field, value in data.items():
-             self.assertEqual(getattr(added_category, field), value)
+            self.assertEqual(getattr(added_category, field), value)
 
     def test_new_product(self):
         data = {
@@ -65,7 +67,7 @@ class TestServises(TestCase):
             'description': "some_text_here",
             'qty': 500,
             'price': 5000,
-            }
+        }
         added_product = add_new_product(data)
         for field, value in data.items():
             if field == 'category':
@@ -73,11 +75,7 @@ class TestServises(TestCase):
                 continue
             self.assertEqual(getattr(added_product, field), value)
 
-
     def test_get_product_by_category(self):
-        correct_products = Product.objects.filter(category__slug="milk") 
+        correct_products = Product.objects.filter(category__slug="milk")
         products_by_function = get_products_by_category("milk")
-        self.assertQuerysetEqual(correct_products, products_by_function)               
-                    
-
-
+        self.assertQuerysetEqual(correct_products, products_by_function)

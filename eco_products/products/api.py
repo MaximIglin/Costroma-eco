@@ -6,11 +6,12 @@ from .serializers import CategorySerializer, ProductSerializer
 from .services import (add_new_product, get_all_categories, get_all_products,
                        get_category_by_slug, get_product_by_slug,
                        does_not_exist_decorator, add_new_category, get_products_by_category
-)
+                       )
 
 
 class CategoryApiView(APIView):
     """This api for all category-instance"""
+
     def get(self, request):
         categories = get_all_categories()
         serializer = CategorySerializer(categories, many=True, read_only=True)
@@ -19,7 +20,7 @@ class CategoryApiView(APIView):
     def post(self, request):
         category = add_new_category(self.request.data)
         serializer = CategorySerializer(category)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)    
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 class CategoryDetailApi(APIView):
@@ -42,7 +43,7 @@ class ProductApiView(APIView):
 
     def post(self, request):
         product = add_new_product(self.request.data)
-        serializer = ProductSerializer(product)    
+        serializer = ProductSerializer(product)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 

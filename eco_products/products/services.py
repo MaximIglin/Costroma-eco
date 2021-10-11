@@ -5,15 +5,16 @@ from rest_framework import status
 from .models import Category, Product
 
 
-
 def does_not_exist_decorator(function):
     """This decorator is needed in order to handle exceptions for non-existent instances"""
+
     def wrapped(self, request, slug):
         try:
             return function(self, request, slug)
         except ObjectDoesNotExist:
             return Response({"Error": "Object does not exist or was deleted"}, status=status.HTTP_404_NOT_FOUND)
     return wrapped
+
 
 def get_all_categories():
     """This function is return all categories"""
@@ -26,10 +27,12 @@ def get_category_by_slug(slug: str):
     category = Category.objects.get(slug=slug)
     return category
 
+
 def get_all_products():
     """This function is return all products"""
     product_queryset = Product.objects.all()
     return product_queryset
+
 
 def get_product_by_slug(slug: str):
     """This function is return prodcut by slug"""
@@ -46,6 +49,7 @@ def add_new_category(data: dict):
         category.image = data['image']
     category.save()
     return category
+
 
 def add_new_product(data: dict):
     """This function for create new product instance"""
@@ -64,9 +68,9 @@ def add_new_product(data: dict):
         product.image = data['image']
         product.save()
     except KeyError:
-        product.save()    
+        product.save()
     product.save()
-    return product  
+    return product
 
 
 def get_products_by_category(category_slug: str):
