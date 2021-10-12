@@ -22,6 +22,8 @@ INSTALLED_APPS = [
     'landing',
     'products',
     'clients_system',
+
+    'corsheaders',
     'rest_framework',
 ]
 
@@ -33,6 +35,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 
 ]
 
