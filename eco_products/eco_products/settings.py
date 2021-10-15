@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'landing',
     'products',
     'clients_system',
+    'debug_toolbar',
 
     'corsheaders',
     'rest_framework',
@@ -36,7 +37,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+]
 
+INTERNAL_IPS = [
+    '127.0.0.1', 
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
