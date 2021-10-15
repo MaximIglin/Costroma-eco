@@ -14,28 +14,30 @@
     <div class="content">
         {%if products%}
             {%for product in products%}
-            <a href="{% url 'product_detail' product.slug %}" class="product_shop" style="color: black;">
+            <div id="{{product.slug}}" class="product_shop" >
                     <div class="product_photo">
                         <img src="{{product.image.url}}" alt="">
                     </div>
                     <div class="product_info">
                         <div class="product_title">{{product.name}}: {{product.price}} ₽</div>
-                        <div class="buy_button"><div>Купить</div></div>
+                        <div class="add_button buy_button" id="{{product.id}}" style="text-align: center;"><div>+</div></div>
+                        <div class="remove_button buy_button" id="{{product.id}}" style="text-align: center;"><div>-</div></div>
                     </div>
-            </a>
+            </div>
             {%endfor%}
         {%endif%}
         {% if category_products %}
             {%for product in category_products%}
-            <a href="{% url 'product_detail' product.slug %}" class="product_shop" style="color: black;">
+            <div id="{{product.slug}}" class="product_shop">
                 <div class="product_photo">
                     <img src="{{product.image.url}}" alt="">
                 </div>
                 <div class="product_info">
-                    <div class="product_title">{{product.name}}: {{product.price}}</div>
-                    <div class="buy_button"><div>Купить</div></div>
+                    <div class="product_title">{{product.name}}: <div>{{product.price}}</div></div>
+                    <div class="add_button buy_button" id="{{product.id}}" style="text-align: center;"><div>+</div></div>
+                    <div class="remove_button buy_button" id="{{product.id}}" style="text-align: center;"><div>-</div></div>
                 </div>
-            </a>
+            </div>
             {%endfor%}
         {% endif %}
     </div>

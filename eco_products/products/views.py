@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from .services import get_all_categories, get_all_products, get_products_by_category, get_product_by_slug
+from .models import Product
 
 
 def get_shop_page(request):
@@ -16,7 +17,6 @@ def category_detail_page(request, slug):
         "categories": get_all_categories(),
         "category_products": get_products_by_category(slug)
     }
-    print(context["category_products"][0].image.url)
     return render(request, "shop.html", context)
 
 
