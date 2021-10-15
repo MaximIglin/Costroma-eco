@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{% static 'clients_system/css/cart.css' %}">   
 </head>
 <body>
-    <div class="header">
+    <div class="header lock-padding">
         <div class="header_content">
             <div class="logo">
             </div>
@@ -28,7 +28,7 @@
                     <a href="#products">Наша продукция</a>
                 </div>
                 <div class="header_button">
-                    <a href="#footer">Как нас найти</a>
+                    <a class="popup-link" href="#popup">Как нас найти</a>
                 </div>
                 <div class="cart">
                     <a href="{%url 'cart'%}"><img src="https://cdn.icon-icons.com/icons2/816/PNG/512/basket_icon-icons.com_66289.png" alt="" height="40px"; width="40px"></a>
@@ -49,9 +49,9 @@
                 <div class="footer_button">
                     <img src="https://free-png.ru/wp-content/uploads/2020/04/VK_Monochrome_Logo_t.png" alt="">
                 </div>
-                <div class="footer_button">
+                <a class="footer_button popup-link" href="#popup">
                     <img src="https://c0.klipartz.com/pngpicture/11/681/gratis-png-logotipo-de-instagram-baba-ghanoush-falafel-tabbouleh-party-y-batalla-huevo-ensalada-logo-de-instagram-blanco.png" alt="">
-                </div>
+                </a>
                 <div class="footer_button"></div>
                 <div class="footer_button"></div>
             </div>
