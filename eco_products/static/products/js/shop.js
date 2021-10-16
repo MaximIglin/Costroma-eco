@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (cookie.indexOf("cart") != -1) {
             isCartCookie = true
             cart = JSON.parse(cookie.split("=")[1])
+            document.querySelector(".final_price").innerHTML = cart["final_price"]
         }
     }
     setTimeout(() => {
@@ -53,14 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 cart["final_price"] = 0
                 document.cookie = encodeURIComponent("cart") + '=' + JSON.stringify(cart) + "; path=/";
                 document.getElementById(`qty_${addCartBtn.id}`).innerHTML = 0
+                document.querySelector(".final_price").innerHTML = cart["final_price"]
             } else {
                 document.getElementById(`qty_${addCartBtn.id}`).innerHTML = Number(cart[addCartBtn.id]["quantity"])
+                document.querySelector(".final_price").innerHTML = cart["final_price"]
             }
             addCartBtn.addEventListener("click", () => {
                 cart[addCartBtn.id]["quantity"] += 1;
                 document.getElementById(`qty_${addCartBtn.id}`).innerHTML = Number(cart[addCartBtn.id]["quantity"])
                 cart["final_price"] += Number(cart[addCartBtn.id].price)
                 document.cookie = encodeURIComponent("cart") + '=' + JSON.stringify(cart) + "; path=/";
+                document.querySelector(".final_price").innerHTML = cart["final_price"]
             })
         }
 
@@ -72,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.getElementById(`qty_${rmCartBtn.id}`).innerHTML = Number(cart[rmCartBtn.id]["quantity"])
                     cart["final_price"] = cart["final_price"] - Number(cart[rmCartBtn.id].price)
                     document.cookie = encodeURIComponent("cart") + '=' + JSON.stringify(cart) + "; path=/";
+                    document.querySelector(".final_price").innerHTML = cart["final_price"]
                 }
             })
 
