@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         detailCart.classList.add('open')
         detailCart.addEventListener('click', function (e) {
             if (!e.target.closest('cart__content')) {
+                console.log(!e.target.closest('cart__content'))
                 cartClose(e.target.closest('.detail_cart'))
             }
         })

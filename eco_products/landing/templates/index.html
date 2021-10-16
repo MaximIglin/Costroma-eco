@@ -39,7 +39,11 @@
         <div class="detail_cart">
             <div class="cart__body">
                 <div class="cart__content">
-
+                    {% if cart_products %}
+                    {% for cart_product in cart_products %}
+                    <h1>{{cart_product.name}}</h1>
+                    {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </div>
