@@ -1,4 +1,5 @@
 /*Обнуление*/
+/*Обнуление*/
 *{
 	padding: 0;
 	margin: 0;
@@ -158,21 +159,78 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 10px;
 }
 
 .cart__content{
     background-color: #fff;
     border-radius: 12px;
     color: #000;
-    max-width: 75%;
+    max-width: 90vw;
     height: 65vh;
-    padding:30px;
+    width: 100vw;
     transition: all 0.8s ease 0s;
     opacity: 0;
     transform: translete(0px, -100%);
+    display:flex;
+    justify-content: flex-end;
+    overflow: hidden;
 }
 
+.cart__menu{
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cart__title{
+    width: 100%;
+    height: 10%;
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid grey;
+}
+
+.lots{
+    width: 100%;
+    height: 85%;
+}
+
+.lots div{
+    display: flex;
+    font-size: 24px;
+}
+
+.cart__price{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid grey;
+}
+
+.cart__price div{
+    width: 90%;
+    height: 10%;
+    border: 2px solid red;
+}
+
+.order__btn{
+    width: 90%;
+    height: 20%;
+    font-size: 30px;
+    font-weight: 500;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 .footer{
@@ -223,4 +281,18 @@ html{
 .footer_button img{
     width: 50px;
     height: 50px;
+}
+
+form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+input{
+    width: 50%;
+    height: 8%;
+    border: 1px solid grey;
 }

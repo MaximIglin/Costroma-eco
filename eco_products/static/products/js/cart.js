@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartContent = document.querySelector('.cart__content')
   const lockPadding = document.querySelectorAll('.lock-padding')
   const body = document.querySelector('body')
+  const lots = document.querySelector('.lots')
+  const cartPrice = document.querySelector('.cart__price')
   const timeout = 800
   let unlock = true
 
@@ -15,10 +17,42 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((data) => (products = data))
       .then(() => {
         let i = 0
+        let final__qty = 0
         products["data"].forEach((product) => {
-          cartContent.innerHTML += `<h1>${product.name}  ${products["qty"][i]}</h1>`
+          final__qty += Number(products["qty"][i])
+          lots.innerHTML += `<div>${product.name}  ${products["qty"][i]} ${Number(product.price) * Number(products["qty"][i])} ₽</div>`
           i ++
         })
+        cartPrice.innerHTML += `<div class="final__qty">Количество товаров: ${final__qty}</div>`
+        cartPrice.innerHTML += `<div class="final__price">Стоимость продуктов: ${cart.final_price} ₽</div>`
+        cartPrice.innerHTML += `<div class="order__btn">Оформить заказ</div>` 
+        
+        const orderBtn = document.querySelector('.order__btn')
+        orderBtn.addEventListener('click', () => {
+          lots.innerHTML = ''
+          lots.innerHTML = `<form action="" method="post">
+                              <label for="formName" class="form_label">Имя*</label>
+                              <input type="text" name="name" id="">
+
+                              <label for="formSurname" class="form_label">Фамилия*</label>
+                              <input type="text" name="surname" id="">
+
+                              <label for="formPhoneNumber" class="form_label">Номер телефона*</label>
+                              <input type="number" name="phone_number" id="">
+
+                              <label for="formAdress" class="form_label">Адрес*</label>
+                              <input type="text" name="adress" id="">
+
+                              <label for="formEmail" class="form_label">Email*</label>
+                              <input type="email" name="email" id="">
+
+                              <label for="formMessage" class="form_label">Сообщение</label>
+                              <input type="text" name="message" id="">
+
+                              <input type="submit" value="Отправить">
+                            </form>`
+        })
+
       })
   });
 
@@ -26,9 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
     bodyLock();
     detailCart.classList.add("open");
     detailCart.addEventListener("click", function (e) {
-      if (!e.target.closest("cart__content")) {
+      if (!e.target.closest(".cart__content")) {
         cartClose(e.target.closest(".detail_cart"));
-        cartContent.innerHTML = ''
+        lots.innerHTML = ''
+        cartPrice.innerHTML = ''
       }
     });
   }
