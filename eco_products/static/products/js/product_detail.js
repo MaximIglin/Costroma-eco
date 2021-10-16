@@ -6,8 +6,6 @@ let unlock = true
 
 const timeout = 800
 
-let i = 0
-
 
 if (popupLinks.length > 0) {
     popupLinks.forEach((popupLink) => {
@@ -16,7 +14,6 @@ if (popupLinks.length > 0) {
             popupOpen(currentPopup)
             e.preventDefault()
         })
-        i++
     })
 }
 const popupCloseIcon = document.querySelectorAll('.close-popup')

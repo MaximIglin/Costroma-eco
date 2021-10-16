@@ -82,6 +82,6 @@ class CartDetailApi(APIView):
             cart_products_qty = [int(qty) for qty in products_quantity if int(qty) !=0 ]
             cart_products_queryset = Product.objects.filter(id__in=cart_products_id)
             serializer = ProductSerializer(cart_products_queryset, many=True)
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response({"data":serializer.data, "qty":cart_products_qty}, status=status.HTTP_200_OK)
         except KeyError:    
             return Response({"оТВТЕ":"Ничего нет"}, status=status.HTTP_200_OK)       
