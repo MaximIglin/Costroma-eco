@@ -132,6 +132,7 @@ body.lock{
 .buy_button div:hover{
     background-color: rgba(0, 0, 0, 0.4);
     transition-duration: 400ms;
+    cursor: pointer;
 }
 
 .buy_button:active{

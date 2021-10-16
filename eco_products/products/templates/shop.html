@@ -7,53 +7,73 @@
     <div class="categories" id="categories">
         <div class="category_menu">
             {% for category in categories%}
-                <a href="{% url 'category' category.slug%}" class="category_button">{{category.name}}</a>
+            <a href="{% url 'category' category.slug%}" class="category_button">{{category.name}}</a>
             {% endfor %}
         </div>
     </div>
     <div class="content">
         {%if products%}
-            {%for product in products%}
-            <div id="{{product.slug}}" class="product_shop" >
-                    <div class="product_photo">
-                        <img src="{{product.image.url}}" alt="">
-                    </div>
-                    <div class="product_info">
-                        <div class="product_title">{{product.name}}: {{product.price}} ₽</div>
-                        <div class="swing">
-                            <div class="qtt" id="{{product.id}}"></div>
-                            <div class="remove_button buy_button" id="{{product.id}}"><div>-</div></div>
-                            <div class="add_button buy_button" id="{{product.id}}"><div>+</div></div>
-                        </div>
-                    </div>
+        {%for product in products%}
+        <div class="product_shop">
+            <div class="product_photo popup-link" id="link_{{product.id}}">
+                <img src="{{product.image.url}}" alt="">
             </div>
-            {%endfor%}
-        {%endif%}
-        {% if category_products %}
-            {%for product in category_products%}
-            <div id="{{product.slug}}" class="product_shop">
-                <div class="product_photo">
-                    <img src="{{product.image.url}}" alt="">
-                </div>
-                <div class="product_info">
-                    <div class="product_title">{{product.name}}: <div>{{product.price}}</div></div>
-                    <div class="swing">
-                        <div class="qtt" id="{{product.id}}"></div>
-                        <div class="remove_button buy_button" id="{{product.id}}"><div>-</div></div>
-                        <div class="add_button buy_button" id="{{product.id}}"><div>+</div></div>
+            <div class="product_info">
+                <div class="product_title">{{product.name}}: {{product.price}} ₽</div>
+                <div class="swing">
+                    <div class="qtt" id="qty_{{product.id}}"></div>
+                    <div class="remove_button buy_button" id="{{product.id}}">
+                        <div>-</div>
                     </div>
-                </div>
-            </div>
-            {%endfor%}
-        {% endif %}
-        <div id="popup" class="popup">
-            <div class="popup__body">
-                <div class="popup__content">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae sit animi magnam eaque distinctio eos officia modi odit temporibus deleniti reiciendis explicabo quibusdam, nisi, id adipisci perspiciatis repellat vero fuga.
+                    <div class="add_button buy_button" id="{{product.id}}">
+                        <div>+</div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="detail_{{product.id}}" class="popup">
+            <div class="popup__body">
+                <div class="popup__content">
+                    <h1>{{product.name}}</h1>
+                    <h1>{{product.price}}</h1>
+                    <h1>{{product.description}}</h1>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+        {%endif%}
+        {% if category_products %}
+        {%for product in category_products%}
+        <div class="product_shop">
+            <div class="product_photo popup-link" id="link_{{product.id}}">
+                <img src="{{product.image.url}}" alt="">
+            </div>
+            <div class="product_info">
+                <div class="product_title">{{product.name}}: {{product.price}} ₽</div>
+                <div class="swing">
+                    <div class="qtt" id="qty_{{product.id}}"></div>
+                    <div class="remove_button buy_button" id="{{product.id}}">
+                        <div>-</div>
+                    </div>
+                    <div class="add_button buy_button" id="{{product.id}}">
+                        <div>+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="detail_{{product.id}}" class="popup">
+            <div class="popup__body">
+                <div class="popup__content">
+                    <h1>{{product.name}}</h1>
+                    <h1>{{product.price}}</h1>
+                    <h1>{{product.description}}</h1>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+        {% endif %}
     </div>
 </div>
 <script src="{% static 'products/js/shop.js'%}"></script>
+<script src="{% static 'products/js/product_detail.js'%}"></script>
 {% endblock %}

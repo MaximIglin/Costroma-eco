@@ -18,7 +18,7 @@ def does_not_exist_decorator(function):
 
 def get_all_categories():
     """This function is return all categories"""
-    category_queryset = Category.objects.all()
+    category_queryset = Category.objects.all().values("id", "name", "slug", "image")
     return category_queryset
 
 
