@@ -28,7 +28,7 @@
                     <a href="#products">Наша продукция</a>
                 </div>
                 <div class="header_button">
-                    <a class="" href="#popup">Как нас найти</a>
+                    <a class="" href="#footer">Как нас найти</a>
                 </div>
                 <div class="cart">
                     <img src="https://cdn.icon-icons.com/icons2/816/PNG/512/basket_icon-icons.com_66289.png" alt="" height="40px"; width="40px">
@@ -39,11 +39,6 @@
         <div class="detail_cart">
             <div class="cart__body">
                 <div class="cart__content">
-                    {% if cart_products %}
-                    {% for cart_product in cart_products %}
-                    <h1>{{cart_product.name}}</h1>
-                    {% endfor %}
-                    {% endif %}
                 </div>
             </div>
         </div>
