@@ -2,6 +2,9 @@ const popupLinks = document.querySelectorAll('.popup-link')
 const body = document.querySelector('body')
 const lockPadding = document.querySelectorAll('.lock-padding')
 
+// const swing = document.querySelectorAll('.swing')
+// const popupInfo = document.querySelectorAll('.popup_info')
+
 let unlock = true
 
 const timeout = 800
@@ -21,7 +24,7 @@ if (popupCloseIcon.length > 0) {
     for (let index = 0; index < popupCloseIcon.length; index++) {
         const el = popupCloseIcon[index]
         el.addEventListener("click", function (e) {
-            popupClose(el.closest('.popup'))
+            popupClose(!el.closest('.popup'))
             e.preventDefault()
         })
     }
@@ -36,8 +39,10 @@ function popupOpen(currentPopup) {
             bodyLock();
         }
         currentPopup.classList.add('open')
+        
+        // popupInfo[currentPopup].innerHTML = `<div class="popup_price">${Number(product.price)}</div>`
         currentPopup.addEventListener('click', function (e) {
-            if (!e.target.closest('popup__content')) {
+            if (!e.target.closest('.popup__content')) {
                 popupClose(e.target.closest('.popup'))
             }
         })

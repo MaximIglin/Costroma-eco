@@ -1,0 +1,11 @@
+@media screen and (max-width: 1050px){
+    .header_menu{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 734px){
+    .header_menu{
+        width: 90%;
+    }
+}

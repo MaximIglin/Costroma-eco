@@ -20,7 +20,21 @@ document.addEventListener("DOMContentLoaded", () => {
         let final__qty = 0
         products["data"].forEach((product) => {
           final__qty += Number(products["qty"][i])
-          lots.innerHTML += `<div>${product.name}  ${products["qty"][i]} ${Number(product.price) * Number(products["qty"][i])} ₽</div>`
+          lots.innerHTML += `<div class="cart_item">
+                                <div class="cart_item_name">${product.name}</div>  
+                                <div class="cart_item_qty"></div> 
+                                <div class="swing">
+                                  
+                                  <div class="remove_button buy_button">
+                                      <div>-</div>
+                                  </div>
+                                  <div class="cart_item_qty">${products["qty"][i]}</div>
+                                  <div class="add_button buy_button">
+                                      <div>+</div>
+                                  </div>
+                                </div>
+                                <div class="cart_item_final_price">${Number(product.price) * Number(products["qty"][i])} ₽</div>
+                              </div>`
           i ++
         })
         cartPrice.innerHTML += `<div class="final__qty">Количество товаров: ${final__qty}</div>`
