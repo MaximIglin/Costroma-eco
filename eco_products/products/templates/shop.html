@@ -15,9 +15,9 @@
         {%if products%}
         {%for product in products%}
         <div class="product_shop">
-            <div class="product_photo popup-link" id="link_{{product.id}}">
+            <a class="product_photo popup-link" id="link_{{product.id}}" href="#detail_{{product.id}}">
                 <img src="{{product.image.url}}" alt="">
-            </div>
+            </a>
             <div class="product_info">
                 <div class="product_title">{{product.name}}: {{product.price}} ₽</div>
                 <div class="swing">
