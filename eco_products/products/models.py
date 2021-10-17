@@ -64,7 +64,7 @@ class Product(models.Model):
         super(Product, self).save(*args, **kwargs)
 
     class Meta:
-        ordering = ['category']
+        ordering = ['id']
         verbose_name = "Продукт"
         db_table = "product"
 
