@@ -21,6 +21,9 @@ body.lock{
     background-color: #000;
 }
 
+
+
+/* Style for categories */
 .categories{
     display: flex;
     justify-content: space-around;
@@ -61,7 +64,10 @@ body.lock{
     transition-duration: 400ms;
     width: 32%;
 }
+/*----------------------------------------------- */
 
+
+/* Style for content*/
 .content{
     width: 95%;
     display: grid;
@@ -71,7 +77,11 @@ body.lock{
     margin-top: 30px;
     margin-bottom: 30px;
 }
+/*----------------------------------------------- */
 
+
+
+/* Style for product on shop*/
 .product_shop{
     display: flex;
     flex-direction: column;
@@ -83,10 +93,10 @@ body.lock{
 .product_photo{
     height: 70%;
     width: 100%;
-    position: relative;
+    /* position: relative; */
 }
 .product_photo img{
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     top: 0;
     width: 100%;
@@ -103,19 +113,51 @@ body.lock{
     justify-content: space-around;
     align-items: center;
     background-color: #fff;
+    border:2px solid red;
+}
+
+.product_info div{
+    border:2px solid red;
+}
+
+.price_swing_wrapper{
+    width: 90%;
+
+    display: flex;
 }
 
 .swing{
-    width: 100%;
+    width: 100px;
     height: 32px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+    border-radius: 25px;
+    background-color: #14b199;
 }
 
+.swing button{
+    height: 32px;
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #fff;
+}
+
+.swing div{
+    height: 32px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #fff;
+}
+/* Style for swing on cart*/
 .qtt{
     width: 50%;
 }
+/*----------------------- */
 
 .buy_button{
     width: 30px;
@@ -128,23 +170,16 @@ body.lock{
     align-items: center;
 }
 
-.buy_button div{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
-
-.buy_button div:hover{
+.buy_button:hover{
     background-color: rgba(0, 0, 0, 0.4);
     transition-duration: 400ms;
     cursor: pointer;
 }
+/*----------------------------------------------- */
 
-.buy_button:active{
-    width: 32px;
-    height: 32px;
-}
 
+
+/* Style for popup*/
 .popup{
     position: fixed;
     width: 100%;
@@ -245,3 +280,4 @@ body.lock{
     align-self: flex-end;
     border: 2px solid red;
 }
+/*----------------------------------------------- */

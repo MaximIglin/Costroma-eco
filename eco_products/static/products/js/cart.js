@@ -22,16 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
           final__qty += Number(products["qty"][i])
           lots.innerHTML += `<div class="cart_item">
                                 <div class="cart_item_name">${product.name}</div>  
-                                <div class="cart_item_qty"></div> 
                                 <div class="swing">
-                                  
-                                  <div class="remove_button buy_button">
-                                      <div>-</div>
-                                  </div>
-                                  <div class="cart_item_qty">${products["qty"][i]}</div>
-                                  <div class="add_button buy_button">
-                                      <div>+</div>
-                                  </div>
+                                  <button class="remove_button buy_button">
+                                      -
+                                  </button>
+                                  <div class="qtt">${products["qty"][i]}</div>
+                                  <button class="add_button buy_button">
+                                      +
+                                  </button>
                                 </div>
                                 <div class="cart_item_final_price">${Number(product.price) * Number(products["qty"][i])} ₽</div>
                               </div>`

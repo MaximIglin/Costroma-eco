@@ -36,6 +36,7 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 
+/* Global Settings */
 html{
     scroll-behavior: smooth;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -49,7 +50,9 @@ html{
     line-height: 1.2;
     word-wrap:break-word;
 }
+/*----------------------------------------------- */
 
+/* Style for header */
 .header{
     font-size: 20px;
     font-weight: 300;
@@ -133,8 +136,7 @@ html{
     font-weight: 400;
 }
 
-
-
+/* Style for cart */
 .detail_cart{
     position: fixed;
     width: 100%;
@@ -214,7 +216,7 @@ html{
 }
 
 .cart_item_name{
-    width: 40%;
+    width: 60%;
 }
 
 .cart_item_qty{
@@ -251,8 +253,10 @@ html{
     justify-content: center;
     align-items: center;
 }
+/*----------------------------------------------- */
+/*----------------------------------------------- */
 
-
+/* Style for footer */
 .footer{
     width: 100%;
     height: 30vh;
@@ -302,7 +306,9 @@ html{
     width: 50px;
     height: 50px;
 }
+/*----------------------------------------------- */
 
+/* Style for form on cart */
 form{
     height: 100%;
     width: 100%;
@@ -316,3 +322,4 @@ input{
     height: 8%;
     border: 1px solid grey;
 }
+/*----------------------------------------------- */
