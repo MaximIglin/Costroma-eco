@@ -1,0 +1,25 @@
+.main_shop{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0;
+}
+
+.header_phone{
+    width: 100%;
+    height: 100px;
+    background-color: #000;
+}
+
+/* Style for content*/
+.content{
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 42vh;
+    grid-gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+/*----------------------------------------------- */

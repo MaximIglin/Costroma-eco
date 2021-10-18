@@ -1,0 +1,28 @@
+/* Style for slider */
+.content_1{
+    width: 100%;
+    background-position: 0 0;
+    background-attachment: fixed;
+}
+
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider_container{
+    background-color: pink;
+}
+
+.slider_track{
+    display: flex;
+    transition: 1.3s;
+}
+
+.slider_item{
+    height: 100vh;
+    width: 100vw;
+}
+/*----------------------------------------------- */

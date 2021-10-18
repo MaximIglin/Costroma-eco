@@ -1,0 +1,83 @@
+/* Style for header */
+.header{
+    font-size: 20px;
+    font-weight: 300;
+    color: #000;
+    width: 100%;
+    height: 90px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    margin-top: 20px;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+.header_content{
+    width: 95%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 20%;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px/50px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.header_menu{
+    width: 50%;
+    height: 100%;
+    min-width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header_button{
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.header_button:hover{
+    border-top: 1px solid #000;
+}
+
+.header_button a{
+    color: #000;
+}
+
+.header_button a:hover{
+    color: #14b199;
+    transition-duration: 400ms;
+}
+
+.cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    font-weight: 400;
+    border-radius: 25px;
+}
+
+.cart:active{
+    border-top: 1px solid rgba(0, 0, 0, 0);
+}
+
+.final_price{
+    margin-left: 5px;
+    font-weight: 400;
+}

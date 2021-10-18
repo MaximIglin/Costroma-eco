@@ -54,8 +54,9 @@
                 <img src="{{product.image.url}}" alt="">
             </div>
             <div class="product_info">
-                <div class="product_title">{{product.name}}: {{product.price}} ₽</div>
+                <div class="product_title">{{product.name}}</div>
                 <div class="price_swing_wrapper">
+                    <div class="product_price">{{product.price}} ₽</div>
                     <div class="swing">
                         <button class="remove_button buy_button" id="{{product.id}}">
                             -
@@ -80,7 +81,7 @@
         {%endfor%}
         {% endif %}
     </div>
-</main>
+</div>
 <script src="{% static 'products/js/shop.js'%}"></script>
 <script src="{% static 'products/js/product_detail.js'%}"></script>
 {% endblock %}

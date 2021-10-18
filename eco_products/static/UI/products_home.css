@@ -1,0 +1,99 @@
+/* Style for products on home */
+.products{
+    height: 80vh;
+    width: 100%;
+    background-position: 0 0;
+    background-attachment: fixed;
+    background-image: url(https://img1.akspic.ru/originals/3/6/9/6/46963-urozhaj-zerno-pshenica-kompania-nebo-1920x1080.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.product_wrapper{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.product_menu{
+    width: 95%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.products_title{
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.product{
+    height: 90%;
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.product_photo{
+    height: 70%;
+    width: 100%;
+    /* position: relative; */
+}
+.product_photo img{
+    /* position: absolute; */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+}
+
+.product_info{
+    font-size: 24px;
+    font-weight: 500;
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+}
+
+.buy_button{
+    width: 60%;
+    height: 40px;
+    border-radius: 12px;
+    background-color: #14b199;
+    color: #fff;
+}
+
+.buy_button div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+.buy_button div:hover{
+    background-color: rgba(0, 0, 0, 0.4);
+    transition-duration: 400ms;
+}
+/*----------------------------------------------- */

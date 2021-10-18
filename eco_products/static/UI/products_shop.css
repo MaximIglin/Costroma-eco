@@ -1,0 +1,98 @@
+/* Style for product on shop*/
+.product_shop{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+
+.product_photo{
+    height: 70%;
+    width: 100%;
+    /* position: relative; */
+}
+.product_photo img{
+    /* position: absolute; */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+}
+
+.product_info{
+    font-size: 24px;
+    font-weight: 500;
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    border:2px solid red;
+}
+
+.product_title{
+    width: 90%;
+    height: 50%;
+}
+
+.price_swing_wrapper{
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swing{
+    width: 100px;
+    height: 32px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 25px;
+    background-color: #14b199;
+}
+
+.swing button{
+    height: 32px;
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #fff;
+}
+
+.swing div{
+    height: 32px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #fff;
+}
+/* Style for swing on cart*/
+.qtt{
+    width: 50%;
+}
+/*----------------------- */
+
+.buy_button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #14b199;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy_button:hover{
+    background-color: rgba(0, 0, 0, 0.4);
+    transition-duration: 400ms;
+    cursor: pointer;
+}
+/*----------------------------------------------- */
