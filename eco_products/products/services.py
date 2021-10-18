@@ -1,3 +1,4 @@
+import json
 from rest_framework.response import Response
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import status
@@ -79,3 +80,18 @@ def get_products_by_category(category_slug: str):
     return products
 
 
+def parse_cart_cookie(request):
+    """This function is return products and their quantity by cart"""
+    cart = list(json.loads(request.COOKIES["cart"]).items())[:-1]
+    products_id = []
+    products_quantity = []
+    for item in cart:
+        products_id.append(item[0])
+        products_quantity.append(item[1]["quantity"])
+
+    cart_products_id = [int(products_id[i]) for i in range(
+        len(products_id)) if int(products_quantity[i]) != 0]
+    cart_products_qty = [int(qty)
+                         for qty in products_quantity if int(qty) != 0]
+    cart_products_queryset = Product.objects.filter(id__in=cart_products_id)
+    return cart_products_queryset, cart_products_qty

@@ -29,7 +29,7 @@ class Category(models.Model):
         super(Category, self).save(*args, *kwargs)
 
     class Meta:
-        verbose_name = "Категории"
+        verbose_name_plural = "Категории"
         db_table = "category"
         ordering = ['id']
 
@@ -65,7 +65,7 @@ class Product(models.Model):
 
     class Meta:
         ordering = ['id']
-        verbose_name = "Продукт"
+        verbose_name_plural = "Продукты"
         db_table = "product"
 
     def __str__(self):

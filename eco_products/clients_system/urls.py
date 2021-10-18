@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import get_cart_page
+from .views import CreateOrderApi
+
 
 
 urlpatterns = [
-    path('cart', get_cart_page, name="cart"),
+    path("api/create-order", CreateOrderApi.as_view())
 ]

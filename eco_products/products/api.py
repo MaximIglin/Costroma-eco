@@ -1,13 +1,12 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-import json
-from .models import Product
 
 from .serializers import CategorySerializer, ProductSerializer
 from .services import (add_new_product, get_all_categories, get_all_products,
                        get_category_by_slug, get_product_by_slug,
-                       does_not_exist_decorator, add_new_category, get_products_by_category
+                       does_not_exist_decorator, add_new_category, get_products_by_category,
+                       parse_cart_cookie
                        )
 
 
@@ -67,21 +66,12 @@ class ProductsByCategoryApi(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-
 class CartDetailApi(APIView):
     def get(self, request):
         try:
-            cart = list(json.loads(request.COOKIES["cart"]).items())[:-1]
-            products_id = []
-            products_quantity = []
-            for item in cart:
-                products_id.append(item[0])
-                products_quantity.append(item[1]["quantity"])
-
-            cart_products_id = [int(products_id[i]) for i in range(0, len(products_id)) if int(products_quantity[i]) != 0 ]
-            cart_products_qty = [int(qty) for qty in products_quantity if int(qty) !=0 ]
-            cart_products_queryset = Product.objects.filter(id__in=cart_products_id)
+            cart_products_queryset, cart_products_qty = parse_cart_cookie(
+                request)
             serializer = ProductSerializer(cart_products_queryset, many=True)
-            return Response({"data":serializer.data, "qty":cart_products_qty}, status=status.HTTP_200_OK)
-        except KeyError:    
-            return Response({"оТВТЕ":"Ничего нет"}, status=status.HTTP_200_OK)       
+            return Response({"data": serializer.data, "qty": cart_products_qty}, status=status.HTTP_200_OK)
+        except KeyError:
+            return Response({"оТВТЕ": "Ничего нет"}, status=status.HTTP_200_OK)
