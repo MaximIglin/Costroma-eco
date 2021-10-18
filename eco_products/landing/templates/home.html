@@ -51,50 +51,49 @@
         </div>
     </div>
 
+    
     <div class="products" id="products">
         <div class="product_wrapper">
-            <div class="products_title">Наша продукция!</div>
-
             <div class="product_menu">
-                <div class="product">
-                    <div class="product_photo">
-                        <img src="https://www.gastronom.ru/binfiles/images/20190828/b3fdbe5b.jpg" alt="">
-                    </div>
+                {% if products %}
+                {% for product in products %}
+                <div class="product_shop">
+                    <a class="product_photo popup-link" id="link_{{product.id}}" href="#detail_{{product.id}}">
+                        <img src="{{product.image.url}}" alt="">
+                    </a>
                     <div class="product_info">
-                        <div class="product_title">Мед: 1000р</div>
-                        <div class="buy_button"><div>Купить</div></div>
+                        <div class="product_title">{{product.name}}</div>
+                        <div class="price_swing_wrapper">
+                            <div class="product_price">{{product.price}} ₽</div>
+                            <div class="swing">
+                                <button class="remove_button buy_button" id="{{product.id}}">
+                                    -
+                                </button>
+                                <div class="qtt" id="qty_{{product.id}}"></div>
+                                <button class="add_button buy_button" id="{{product.id}}">
+                                    +
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="product">
-                    <div class="product_photo">
-                        <img src="https://www.gastronom.ru/binfiles/images/20190828/b3fdbe5b.jpg" alt="">
-                    </div>
-                    <div class="product_info">
-                        <div class="product_title">Мед: 1000р</div>
-                        <div class="buy_button"><div>Купить</div></div>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="product_photo">
-                        <img src="https://www.gastronom.ru/binfiles/images/20190828/b3fdbe5b.jpg" alt="">
-                    </div>
-                    <div class="product_info">
-                        <div class="product_title">Мед: 1000р</div>
-                        <div class="buy_button"><div>Купить</div></div>
+                <div id="detail_{{product.id}}" class="popup">
+                    <div class="popup__body">
+                        <div class="popup__content">
+                            <div class="popup_image"><img src={{product.image.url}} alt=""></div>
+                            <div class="popup_info">
+                                <div class="popup_name">{{product.name}}</div>
+                                <div class="popup_description">{{product.description}}</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="product">
-                    <div class="product_photo">
-                        <img src="https://www.gastronom.ru/binfiles/images/20190828/b3fdbe5b.jpg" alt="">
-                    </div>
-                    <div class="product_info">
-                        <div class="product_title">Мед: 1000р</div>
-                        <div class="buy_button"><div>Купить</div></div>
-                    </div>
-                </div>
+                {%endfor%}
+                {% endif %}
             </div>
         </div>
     </div>
+    
     
     <div class="reviews" id="reviews">
         <div class="reviews_title">Отзывы:</div>

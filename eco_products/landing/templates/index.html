@@ -14,11 +14,13 @@
     <link rel="stylesheet" href="{% static 'products/css/media.css' %}">
 
     <link rel="stylesheet" href="{% static 'UI/header.css' %}">
-    <link rel="stylesheet" href="{% static 'UI/categories.css' %}">
+    <link rel="stylesheet" href="{% static 'UI/footer.css' %}">
     <link rel="stylesheet" href="{% static 'UI/slider.css' %}">
     <link rel="stylesheet" href="{% static 'UI/products_home.css' %}">
     <link rel="stylesheet" href="{% static 'UI/reviews_home.css' %}">
+    <link rel="stylesheet" href="{% static 'UI/categories.css' %}">
     <link rel="stylesheet" href="{% static 'UI/products_shop.css' %}">
+    <link rel="stylesheet" href="{% static 'UI/cart.css' %}">
     <link rel="stylesheet" href="{% static 'UI/popup.css' %}">
 
 </head>
@@ -80,8 +82,9 @@
             </div>
         </div>
     </footer>
-    {% block "container1" %}
-    {% endblock %}
+
     <script src="{% static 'products/js/cart.js'%}"></script>
+    <script src="{% static 'products/js/shop.js'%}"></script>
+    <script src="{% static 'products/js/product_detail.js'%}"></script>
 </body>
 </html>

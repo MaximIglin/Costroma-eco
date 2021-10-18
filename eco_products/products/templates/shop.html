@@ -1,7 +1,7 @@
 {% extends "index.html" %}
-{%load static%}
+{% load static %}
 
-{% block "container"%}
+{% block "container" %}
 <main class="main_shop">
     <div class="header_phone"></div>
     <div class="categories" id="categories">
@@ -47,12 +47,13 @@
         </div>
         {%endfor%}
         {%endif%}
+        
         {% if category_products %}
         {%for product in category_products%}
         <div class="product_shop">
-            <div class="product_photo popup-link" id="link_{{product.id}}">
+            <a class="product_photo popup-link" id="link_{{product.id}}" href="#detail_{{product.id}}">
                 <img src="{{product.image.url}}" alt="">
-            </div>
+            </a>
             <div class="product_info">
                 <div class="product_title">{{product.name}}</div>
                 <div class="price_swing_wrapper">
@@ -72,16 +73,16 @@
         <div id="detail_{{product.id}}" class="popup">
             <div class="popup__body">
                 <div class="popup__content">
-                    <h1>{{product.name}}</h1>
-                    <h1>{{product.price}}</h1>
-                    <h1>{{product.description}}</h1>
+                    <div class="popup_image"><img src={{product.image.url}} alt=""></div>
+                    <div class="popup_info">
+                        <div class="popup_name">{{product.name}}</div>
+                        <div class="popup_description">{{product.description}}</div>
+                    </div>
                 </div>
             </div>
         </div>
         {%endfor%}
         {% endif %}
     </div>
-</div>
-<script src="{% static 'products/js/shop.js'%}"></script>
-<script src="{% static 'products/js/product_detail.js'%}"></script>
+</main>
 {% endblock %}

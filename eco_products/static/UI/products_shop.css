@@ -30,12 +30,14 @@
     justify-content: space-around;
     align-items: center;
     background-color: #fff;
-    border:2px solid red;
 }
 
 .product_title{
     width: 90%;
     height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .price_swing_wrapper{
@@ -73,11 +75,6 @@
     align-items: center;
     color: #fff;
 }
-/* Style for swing on cart*/
-.qtt{
-    width: 50%;
-}
-/*----------------------- */
 
 .buy_button{
     width: 30px;
