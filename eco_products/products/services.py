@@ -1,7 +1,9 @@
 import json
+
+from rest_framework import status
 from rest_framework.response import Response
 from django.core.exceptions import ObjectDoesNotExist
-from rest_framework import status
+
 
 from .models import Category, Product
 
@@ -95,3 +97,6 @@ def parse_cart_cookie(request):
                          for qty in products_quantity if int(qty) != 0]
     cart_products_queryset = Product.objects.filter(id__in=cart_products_id)
     return cart_products_queryset, cart_products_qty
+
+
+
