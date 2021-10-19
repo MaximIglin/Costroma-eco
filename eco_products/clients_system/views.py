@@ -5,8 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from .models import Client, Order
-from .services import validate_and_add_client, create_order
+from .services import create_order
 
 
 class CreateOrderApi(APIView):
@@ -15,8 +14,6 @@ class CreateOrderApi(APIView):
     def post(self, request):
         try:
             create_order(request, self.request.data)
-            return Response({"ok":"add"})
+            return Response({"ok": "add"}, status=status.HTTP_200_OK)
         except KeyError:
-            return Response({"Ошибка введённых данных":"Проверь еблан"})    
-
-
+            return Response({"Ошибка введённых данных": "Проверь еблан"}, status=status.HTTP_400_BAD_REQUEST)

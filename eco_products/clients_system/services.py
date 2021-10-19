@@ -3,7 +3,7 @@ import pytz
 
 from django.dispatch import receiver
 from django.db.models.signals import post_save
-from django.core.mail import send_mail, EmailMultiAlternatives
+from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 
 
@@ -65,19 +65,14 @@ def create_order(request, data):
 
 @receiver(post_save, sender=Order)
 def post_emails(sender, instance, **kwargs):
-    # message = f"Здравствуйте, {instance.client.first_name}! \n Спасибо, что оформили заказ именно у нас!  \n Ваша заказ: {instance.order_list} \n На сумму {instance.final_price} оформлен. \n Ожидайте звонка от нашего оператора!"
-    # send_mail(
-    #     'Заказ в Костромских ЭКО-продуктах',
-    #     message,
-    #     'from@example.com',
-    #     [f'{instance.client.email}'],
-    #     fail_silently=False,
-    # )
+    """This signal is work when order is save"""
     context = {
-        "message":instance.order_list
+        "message": instance.order_list,
+        "name": instance.client.first_name
     }
     html_body = render_to_string("mail_templates/order.html", context)
-    msg = EmailMultiAlternatives(subject="Заказ в Костромских ЭКО-продуктах", to=[f'{instance.client.email}'])
+    msg = EmailMultiAlternatives(subject="Заказ в Костромских ЭКО-продуктах", to=[
+                                 f'{instance.client.email}', "iglin1488@gmail.com"])
     msg.attach_alternative(html_body, "text/html")
     msg.send()
     print(f"{instance.client.email}")
