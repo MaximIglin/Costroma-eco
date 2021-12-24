@@ -1,5 +1,6 @@
 /* Style for product on shop*/
 .product_shop{
+    border: 1px dashed red;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -52,10 +53,10 @@
     width: 100px;
     height: 32px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     border-radius: 25px;
-    background-color: #14b199;
+    background-color: #62DA9A;
 }
 
 .swing button{
@@ -80,7 +81,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #14b199;
+    background-color: #62DA9A;
     color: #fff;
     display: flex;
     justify-content: center;

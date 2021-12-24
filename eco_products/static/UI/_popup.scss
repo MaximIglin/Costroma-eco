@@ -11,6 +11,8 @@
     overflow-x: auto;
     overflow-x: hidden;
     transition: all 0.8s ease 0s;
+    //!
+    z-index: 3;
 }
 
 .popup.open{

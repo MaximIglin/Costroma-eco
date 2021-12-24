@@ -8,13 +8,13 @@
     align-items: center;
 }
 
-.reviews_title{
-    color: #000;
-    text-align: center;
-    width: 100%;
-    font-size: 50px;
-    font-weight: 500;
-}
+//.reviews_title{
+//    color: #000;
+//    text-align: center;
+//    width: 100%;
+//    font-size: 50px;
+//    font-weight: 500;
+//}
 
 .review_menu{
     width: 90%;
@@ -28,6 +28,8 @@
 .review{
     height: 90%;
     width: 30%;
+    background-color: #62DA9A;
+    color: whitesmoke;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -35,17 +37,17 @@
     align-items: center;
     box-shadow: 4px 4px 9px rgba(198,198,198,0.4);
     /* border: 3px solid #000; */
-    border-radius: 12px;
+    border-radius: 17px;
 }
 
 .nickname{
     font-weight: 500;
-    font-size: 24px;
+    font-size: 28px;
     width: 80%;
 }
 
 .text_review{
-    font-size: 20px;
+    font-size: 23px;
     width: 80%;
     max-height: 80%;
 }

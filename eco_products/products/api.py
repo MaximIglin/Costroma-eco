@@ -1,8 +1,9 @@
 from rest_framework.views import APIView
+from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from .serializers import CategorySerializer, ProductSerializer
+from .serializers import CategorySerializer, ProductSerializer,  CartProductSerializer
 from .services import (add_new_product, get_all_categories, get_all_products,
                        get_category_by_slug, get_product_by_slug,
                        does_not_exist_decorator, add_new_category, get_products_by_category,
@@ -66,12 +67,12 @@ class ProductsByCategoryApi(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-class CartDetailApi(APIView):
+class CartDetailApi(GenericAPIView):
     def get(self, request):
         try:
             cart_products_queryset, cart_products_qty = parse_cart_cookie(
-                request)
-            serializer = ProductSerializer(cart_products_queryset, many=True)
+            request)
+            serializer = CartProductSerializer(cart_products_queryset, many=True)
             return Response({"data": serializer.data, "qty": cart_products_qty}, status=status.HTTP_200_OK)
         except KeyError:
             return Response({"оТВТЕ": "Ничего нет"}, status=status.HTTP_200_OK)

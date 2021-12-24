@@ -49,19 +49,14 @@
 
 .header_button{
     border: 1px solid rgba(0, 0, 0, 0);
-}
-
-.header_button:hover{
-    border-top: 1px solid #000;
-}
-
-.header_button a{
-    color: #000;
-}
-
-.header_button a:hover{
-    color: #14b199;
-    transition-duration: 400ms;
+    a {color: #000}
+    &:hover{
+        border-top: 1px solid #000;
+    }
+    a:hover{
+        color: #698824;
+        transition-duration: 400ms;
+    }
 }
 
 .cart{
@@ -71,10 +66,9 @@
     margin-left: 5px;
     font-weight: 400;
     border-radius: 25px;
-}
-
-.cart:active{
-    border-top: 1px solid rgba(0, 0, 0, 0);
+    &:active{
+        border-top: 1px solid rgba(0, 0, 0, 0);
+    }
 }
 
 .final_price{

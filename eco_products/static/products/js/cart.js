@@ -6,13 +6,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const lockPadding = document.querySelectorAll('.lock-padding')
   const body = document.querySelector('body')
   const lots = document.querySelector('.lots')
-  const cartPrice = document.querySelector('.cart__price')
+  const cartInfo = document.querySelector('.cart__info')
+
   const timeout = 800
   let unlock = true
 
   cartLink.addEventListener("click", () => {
     cartOpen(detailCart);
-    fetch("http://localhost:8000/api/cart_detail")
+    fetch("http://127.0.0.1:8000/api/cart_detail",{
+      method: 'GET',
+      headers: {
+        "content-type": "application/json",
+        "cookie": document.cookie
+      }
+    }, )
       .then((response) => response.json())
       .then((data) => (products = data))
       .then(() => {
@@ -23,11 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
           lots.innerHTML += `<div class="cart_item">
                                 <div class="cart_item_name">${product.name}</div>  
                                 <div class="swing">
-                                  <button class="remove_button buy_button">
+                                  <button class="remove_button buy_button" id="${product.id}">
                                       -
                                   </button>
-                                  <div class="qtt">${products["qty"][i]}</div>
-                                  <button class="add_button buy_button">
+                                  <div class="qtt" id="qty_${product.id}"></div>
+                                  <button class="add_button buy_button" id="${product.id}">
                                       +
                                   </button>
                                 </div>
@@ -35,16 +42,18 @@ document.addEventListener("DOMContentLoaded", () => {
                               </div>`
           i ++
         })
-        cartPrice.innerHTML += `<div class="final__qty">Количество товаров: ${final__qty}</div>`
-        cartPrice.innerHTML += `<div class="final__price">Стоимость продуктов: ${cart.final_price} ₽</div>`
-        cartPrice.innerHTML += `<div class="order__btn">Оформить заказ</div>` 
-        
+        cartInfo.innerHTML += `<div class="final__qty">Количество товаров: ${final__qty}</div>`
+        cartInfo.innerHTML += `<div class="final__price">Стоимость продуктов: ${cart.final_price} ₽</div>`
+        cartInfo.innerHTML += `<div class="order__btn">Оформить заказ</div>`
+
         const orderBtn = document.querySelector('.order__btn')
         orderBtn.addEventListener('click', () => {
+          orderBtn.classList.add('hide')
           lots.innerHTML = ''
           lots.innerHTML = `<form action="" method="post">
+                              
                               <label for="formName" class="form_label">Имя*</label>
-                              <input type="text" name="name" id="">
+                              <input type="text" name="name" id="name">
 
                               <label for="formSurname" class="form_label">Фамилия*</label>
                               <input type="text" name="surname" id="">
@@ -61,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
                               <label for="formMessage" class="form_label">Сообщение</label>
                               <input type="text" name="message" id="">
 
-                              <input type="submit" value="Отправить">
+                              <button type="submit">Отправить</button>
                             </form>`
         })
 
@@ -75,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!e.target.closest(".cart__content")) {
         cartClose(e.target.closest(".detail_cart"));
         lots.innerHTML = ''
-        cartPrice.innerHTML = ''
+        cartInfo.innerHTML = ''
       }
     });
   }

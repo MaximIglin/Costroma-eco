@@ -7,21 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Костромские Эко-продукты</title>
-    <link rel="stylesheet" href="{% static 'landing/css/index.css' %}">
     <link rel="stylesheet" href="{% static 'landing/css/home.css' %}"> 
-    <link rel="stylesheet" href="{% static 'products/css/shop.css' %}"> 
-    <link rel="stylesheet" href="{% static 'clients_system/css/cart.css' %}">
-    <link rel="stylesheet" href="{% static 'products/css/media.css' %}">
-
-    <link rel="stylesheet" href="{% static 'UI/header.css' %}">
-    <link rel="stylesheet" href="{% static 'UI/footer.css' %}">
-    <link rel="stylesheet" href="{% static 'UI/slider.css' %}">
-    <link rel="stylesheet" href="{% static 'UI/products_home.css' %}">
-    <link rel="stylesheet" href="{% static 'UI/reviews_home.css' %}">
-    <link rel="stylesheet" href="{% static 'UI/categories.css' %}">
-    <link rel="stylesheet" href="{% static 'UI/products_shop.css' %}">
-    <link rel="stylesheet" href="{% static 'UI/cart.css' %}">
-    <link rel="stylesheet" href="{% static 'UI/popup.css' %}">
+    <link rel="stylesheet" href="{% static 'products/css/shop.css' %}">
 
 </head>
 <body>
@@ -40,7 +27,7 @@
                     <a href="#products">Наша продукция</a>
                 </div>
                 <div class="header_button">
-                    <a class="" href="#footer">Как нас найти</a>
+                    <a href="#map_title">Как нас найти</a>
                 </div>
                 <div class="cart">
                     <img src="https://cdn.icon-icons.com/icons2/816/PNG/512/basket_icon-icons.com_66289.png" alt="" height="40px"; width="40px">
@@ -56,6 +43,7 @@
                         <div class="lots"></div>
                     </div>
                     <div class="cart__price">
+                        <div class="cart__info"></div>
                     </div>
                 </div>
             </div>
@@ -65,7 +53,7 @@
     {% block "container" %}
     {% endblock %}
 
-    <footer class="footer" id="footer">
+    <footer class="footer">
         <div class="footer_content">
             <div class="footer_logo">
                 OOO Григоревская туса

@@ -1,0 +1,21 @@
+.title{
+  font-size: 35px;
+  padding: 20px 0;
+}
+
+.map_wrapper{
+  width: 90%;
+  height: 500px;
+  display: flex;
+  .map{
+    width: 60%;
+    height: 100%;
+  }
+  .map_info{
+    width: 40%;
+    height: 100%;
+    font-size: 23px;
+    padding: 20px;
+    margin: 20px;
+  }
+}

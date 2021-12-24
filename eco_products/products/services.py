@@ -33,7 +33,7 @@ def get_category_by_slug(slug: str):
 
 def get_all_products():
     """This function is return all products"""
-    product_queryset = Product.objects.all()
+    product_queryset = Product.objects.all().values("id", "name", "price")
     return product_queryset
 
 
@@ -95,7 +95,7 @@ def parse_cart_cookie(request):
         len(products_id)) if int(products_quantity[i]) != 0]
     cart_products_qty = [int(qty)
                          for qty in products_quantity if int(qty) != 0]
-    cart_products_queryset = Product.objects.filter(id__in=cart_products_id)
+    cart_products_queryset = Product.objects.filter(id__in=cart_products_id).values("id", "name", "price")
     return cart_products_queryset, cart_products_qty
 
 

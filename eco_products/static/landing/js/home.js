@@ -28,3 +28,4 @@ for (cookie of document.cookie.split("; ")) {
 if(isCartCookie == false){
     document.querySelector(".final_price").innerHTML = 0
 }
+

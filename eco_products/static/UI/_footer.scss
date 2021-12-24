@@ -3,7 +3,7 @@
     width: 100%;
     height: 30vh;
     min-height: 150px;
-    background-color: #000;
+    background-color: #2b2e34;
     display: flex;
     justify-content: center;
     bottom: 0;
@@ -38,11 +38,11 @@
     width: 50px;
     height: 50px;
     border-radius: 12px;
+    &:active{
+        border-top: 1px solid #000;
+    }
 }
 
-.footer_button:active{
-    border-top: 1px solid #000;
-}
 
 .footer_button img{
     width: 50px;

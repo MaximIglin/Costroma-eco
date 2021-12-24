@@ -39,7 +39,7 @@ function popupOpen(currentPopup) {
             bodyLock();
         }
         currentPopup.classList.add('open')
-        
+
         // popupInfo[currentPopup].innerHTML = `<div class="popup_price">${Number(product.price)}</div>`
         currentPopup.addEventListener('click', function (e) {
             if (!e.target.closest('.popup__content')) {

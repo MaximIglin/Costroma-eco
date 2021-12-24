@@ -19,9 +19,13 @@ class ProductSerializer(ModelSerializer):
 
     class Meta:
         model = Product
-        fields = "__all__"
+        fields = ["id", "name", "price"]
 
-    def to_representation(self, instance):
-        rep = super(ProductSerializer, self).to_representation(instance)
-        rep['category'] = instance.category.name
-        return rep
+
+
+class CartProductSerializer(ModelSerializer):
+    """This serializer for Category-model"""
+
+    class Meta:
+        model = Product
+        fields = ["id", "name", "price"]
